@@ -2,8 +2,8 @@ name: Update Noles Stats
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC = 8:00 AM Eastern
-  workflow_dispatch:        # Also allows manual "Run now" from GitHub
+    - cron: '0 12 * * *'
+  workflow_dispatch:
 
 jobs:
   update-stats:
