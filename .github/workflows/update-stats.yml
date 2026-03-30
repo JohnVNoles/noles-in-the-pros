@@ -24,6 +24,11 @@ jobs:
       - name: Run stats updater
         run: python noles_stats_updater.py
 
+      - name: Rebrand to Noles in the Show
+        run: |
+          sed -i 's/Noles in the Pros/Noles in the Show/g' noles_dashboard.html
+          sed -i 's/NolesInThePros/NolesInTheShow/g' noles_dashboard.html
+
       - name: Inject last-updated indicator
         run: |
           python3 - <<'PYEOF'
