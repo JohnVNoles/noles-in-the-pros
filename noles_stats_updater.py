@@ -337,9 +337,9 @@ def generate_html(player_data: list[dict]):
         )
         no_data_msg = ('<div class="no-data">Season not started or not in MLB system</div>'
                        if not stats else "")
-    season_shown = p.get("season_shown", SEASON)
-    season_note = (f'<div class="season-note">† {season_shown} stats (season not yet started)</div>'
-                   if season_shown != SEASON and stats else "")
+        season_shown = p.get("season_shown", SEASON)
+        season_note = (f'<div class="season-note">† {season_shown} stats (season not yet started)</div>'
+                       if season_shown != SEASON and stats else "")
         org_line = (f'<div class="card-org">⬆ {p["org"]}</div>'
                     if lvl != "MLB" and p.get("org") else "")
         return f'''
