@@ -30,7 +30,7 @@ nav { background: var(--garnet); padding: 0 32px; display: flex; align-items: ce
                 border-radius: 6px; font-size: 0.88rem; transition: all 0.15s; white-space: nowrap; }
 .nav-links a:hover { background: rgba(255,255,255,0.12); color: white; }
 .nav-links a.active { background: rgba(206,184,136,0.2); color: var(--gold); font-weight: 600; }
-.nav-updated { color: rgba(255,255,255,0.45); font-size: 0.72rem; margin-left: auto; white-space: nowrap; }
+.nav-updated { color: rgba(255,255,255,0.70); font-size: 0.72rem; margin-left: auto; white-space: nowrap; }
 
 /* ── Hero ── */
 .hero { background: linear-gradient(135deg, var(--garnet-dark) 0%, var(--garnet) 55%, var(--garnet-light) 100%);
@@ -50,6 +50,9 @@ nav { background: var(--garnet); padding: 0 32px; display: flex; align-items: ce
 .hero-stat .num { color: var(--gold); font-size: 2rem; font-weight: 800; line-height: 1; }
 .hero-stat .lbl { color: rgba(255,255,255,0.6); font-size: 0.72rem; text-transform: uppercase;
                     letter-spacing: 0.08em; margin-top: 4px; }
+.hero-updated { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(206,184,136,0.2);
+                  color: rgba(255,255,255,0.65); font-size: 0.8rem; letter-spacing: 0.03em; }
+.hero-updated strong { color: var(--gold); font-weight: 600; }
 
 /* ── Legacy accolades strip ── */
 .legacy { background: var(--garnet-dark); border-bottom: 3px solid var(--gold); }
@@ -101,6 +104,9 @@ nav { background: var(--garnet); padding: 0 32px; display: flex; align-items: ce
              border-radius: 20px; cursor: pointer; font-size: 0.78rem;
              color: #555; transition: all .15s; font-weight: 600; }
 .view-btn.active { background: var(--garnet); color: white; border-color: var(--garnet); }
+.controls-updated { margin-left: 12px; font-size: 0.72rem; color: #999; white-space: nowrap;
+                      padding: 4px 0; display: flex; align-items: center; gap: 4px; }
+.controls-updated::before { content: '↻'; font-size: 0.78rem; color: var(--garnet); }
 
 /* ── Two-column roster layout ── */
 .roster-layout { display: flex; gap: 24px; align-items: flex-start;
@@ -151,6 +157,8 @@ nav { background: var(--garnet); padding: 0 32px; display: flex; align-items: ce
 .stat-lbl { font-size: 0.62rem; color: #999; text-transform: uppercase; margin-top: 1px; }
 .no-data { grid-column: 1/-1; text-align: center; color: #bbb;
             font-size: 0.78rem; padding: 8px 0; font-style: italic; }
+.season-note { text-align: center; font-size: 0.68rem; color: #aaa;
+                font-style: italic; padding: 2px 0 6px; }
 
 /* ── List/Table view ── */
 .list-wrap { display: none; }
@@ -230,7 +238,6 @@ footer a { color: var(--gold); text-decoration: none; }
   .row-photo { width: 28px; height: 28px; }
   footer { padding: 18px 16px; }
 }
-.hero-updated{margin-top:16px;padding-top:14px;border-top:1px solid rgba(206,184,136,.2);color:rgba(255,255,255,.65);font-size:.8rem;letter-spacing:.03em}.hero-updated strong{color:var(--gold);font-weight:600}
 </style>
 </head>
 <body>
@@ -250,7 +257,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <a href="#news"   class="nav-link">News</a>
     <a href="#about"  class="nav-link">About</a>
   </div>
-  <span class="nav-updated">Updated March 30, 2026 at 03:56 PM</span>
+  <span class="nav-updated">Updated March 31, 2026 at 01:38 AM</span>
 </nav>
 
 <!-- Hero -->
@@ -264,7 +271,7 @@ footer a { color: var(--gold); text-decoration: none; }
       <div class="hero-stat"><div class="num">24</div><div class="lbl">Organizations</div></div>
       <div class="hero-stat"><div class="num">2026</div><div class="lbl">Season</div></div>
     </div>
-    <div class="hero-updated">Stats last updated: <strong>March 30, 2026 at 03:56 PM UTC</strong></div>
+    <div class="hero-updated">📅 Stats last updated: <strong>March 31, 2026 at 01:38 AM ET</strong></div>
   </div>
 </section>
 
@@ -334,6 +341,7 @@ footer a { color: var(--gold); text-decoration: none; }
 <button class="filter-btn" data-color="#5a5a5a" onclick="filterLevel('Independent',this)">Independent</button>
 
   <input class="search-box" type="text" placeholder="Search player…" oninput="applySearch(this.value)">
+  <span class="controls-updated">Updated March 31, 2026 at 01:38 AM ET</span>
   <div class="view-toggle">
     <button class="view-btn active" id="btnCards" onclick="setView('cards')">⊞ Cards</button>
     <button class="view-btn" id="btnList"  onclick="setView('list')">≡ List</button>
@@ -396,7 +404,7 @@ footer a { color: var(--gold); text-decoration: none; }
             </div>
           </div>
           <div class="card-level" style="color:#782F40">MLB</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">2.72</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">39.2</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">38</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">6</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.31</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">2.72</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">39.2</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">38</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">6</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.31</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="MLB" data-name="cole sands">
@@ -422,7 +430,7 @@ footer a { color: var(--gold); text-decoration: none; }
             </div>
           </div>
           <div class="card-level" style="color:#782F40">MLB</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">.077</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.371</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.294</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">4</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">13</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.067</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.330</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.263</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">5</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">15</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SB</div></div></div>
         </div>
 
         <div class="card" data-level="MLB" data-name="taylor walls">
@@ -435,92 +443,92 @@ footer a { color: var(--gold); text-decoration: none; }
             </div>
           </div>
           <div class="card-level" style="color:#782F40">MLB</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">.220</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">4</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">38</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.599</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.280</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">101</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">282</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">62</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">36</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">14</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.220</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">4</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">38</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.599</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.280</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">101</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">282</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">62</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">36</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">14</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AAA" data-name="shane drohan">
           <div class="card-header" style="background:#B5451B;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/675660/headshot/67/current" alt="Shane Drohan" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Shane Drohan</div>
+              <div class="card-name"><a href="https://www.milb.com/player/shane-drohan-675660" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Shane Drohan</a></div>
               <div class="card-meta">LHP · Nashville Sounds</div>
               <div class="card-org">⬆ Milwaukee Brewers</div>
             </div>
           </div>
           <div class="card-level" style="color:#B5451B">AAA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">2.27</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">47.2</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">5</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">67</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">16</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.01</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AAA" data-name="james tibbs iii">
           <div class="card-header" style="background:#B5451B;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/696486/headshot/67/current" alt="James Tibbs III" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">James Tibbs III</div>
+              <div class="card-name"><a href="https://www.milb.com/player/james-tibbs-iii-696486" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">James Tibbs III</a></div>
               <div class="card-meta">OF · Oklahoma City Baseball Club</div>
               <div class="card-org">⬆ Los Angeles Dodgers</div>
             </div>
           </div>
           <div class="card-level" style="color:#B5451B">AAA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.615</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">2</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">8</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">2.105</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.643</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">13</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">8</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">6</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SB</div></div></div>
         </div>
 
         <div class="card" data-level="AAA" data-name="cj van eyk">
           <div class="card-header" style="background:#B5451B;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/669310/headshot/67/current" alt="CJ Van Eyk" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">CJ Van Eyk</div>
+              <div class="card-name"><a href="https://www.milb.com/player/cj-van-eyk-669310" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">CJ Van Eyk</a></div>
               <div class="card-meta">RHP · Buffalo Bisons</div>
               <div class="card-org">⬆ Toronto Blue Jays</div>
             </div>
           </div>
           <div class="card-level" style="color:#B5451B">AAA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">4.94</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">89.1</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">4</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">6</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">73</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">40</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.52</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AAA" data-name="brandon leibrandt">
           <div class="card-header" style="background:#B5451B;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/605335/headshot/67/current" alt="Brandon Leibrandt" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Brandon Leibrandt</div>
+              <div class="card-name"><a href="https://www.milb.com/player/brandon-leibrandt-605335" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Brandon Leibrandt</a></div>
               <div class="card-meta">LHP · Louisville Bats</div>
               <div class="card-org">⬆ Cincinnati Reds</div>
             </div>
           </div>
           <div class="card-level" style="color:#B5451B">AAA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">2.85</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">41.0</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">37</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">14</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.12</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AAA" data-name="drew parrish">
           <div class="card-header" style="background:#B5451B;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/669283/headshot/67/current" alt="Drew Parrish" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Drew Parrish</div>
+              <div class="card-name"><a href="https://www.milb.com/player/drew-parrish-669283" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Drew Parrish</a></div>
               <div class="card-meta">LHP · Louisville Bats</div>
               <div class="card-org">⬆ Cincinnati Reds</div>
             </div>
           </div>
           <div class="card-level" style="color:#B5451B">AAA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">6.58</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">26.0</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">15</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">14</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.88</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AAA" data-name="dj stewart">
           <div class="card-header" style="background:#B5451B;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/621466/headshot/67/current" alt="DJ Stewart" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">DJ Stewart</div>
+              <div class="card-name"><a href="https://www.milb.com/player/dj-stewart-621466" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">DJ Stewart</a></div>
               <div class="card-meta">OF · —</div>
               <div class="card-org">⬆ Free Agent</div>
             </div>
           </div>
           <div class="card-level" style="color:#B5451B">AAA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.125</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">5</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">20</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.502</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.245</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">45</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">136</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">17</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">15</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AA" data-name="jamie arnold">
           <div class="card-header" style="background:#CEB888;color:#333">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701364/headshot/67/current" alt="Jamie Arnold" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Jamie Arnold</div>
+              <div class="card-name"><a href="https://www.milb.com/player/jamie-arnold-701364" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jamie Arnold</a></div>
               <div class="card-meta">LHP · Midland RockHounds</div>
               <div class="card-org">⬆ Oakland Athletics</div>
             </div>
@@ -533,85 +541,85 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#CEB888;color:#333">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/691765/headshot/67/current" alt="Jackson Baumeister" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Jackson Baumeister</div>
+              <div class="card-name"><a href="https://www.milb.com/player/jackson-baumeister-691765" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jackson Baumeister</a></div>
               <div class="card-meta">RHP · Montgomery Biscuits</div>
               <div class="card-org">⬆ Tampa Bay Rays</div>
             </div>
           </div>
           <div class="card-level" style="color:#CEB888">AA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">4.62</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">62.1</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">2</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">4</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">51</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">25</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.25</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AA" data-name="jack anderson">
           <div class="card-header" style="background:#CEB888;color:#333">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/681252/headshot/67/current" alt="Jack Anderson" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Jack Anderson</div>
+              <div class="card-name"><a href="https://www.milb.com/player/jack-anderson-681252" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jack Anderson</a></div>
               <div class="card-meta">RHP · Portland Sea Dogs</div>
               <div class="card-org">⬆ Boston Red Sox</div>
             </div>
           </div>
           <div class="card-level" style="color:#CEB888">AA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">3.58</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">75.1</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">2</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">5</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">90</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">18</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.17</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="AA" data-name="j.c. flowers">
           <div class="card-header" style="background:#CEB888;color:#333">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/669001/headshot/67/current" alt="J.C. Flowers" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">J.C. Flowers</div>
+              <div class="card-name"><a href="https://www.milb.com/player/j-c-flowers-669001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">J.C. Flowers</a></div>
               <div class="card-meta">RHP · Altoona Curve</div>
               <div class="card-org">⬆ Pittsburgh Pirates</div>
             </div>
           </div>
           <div class="card-level" style="color:#CEB888">AA</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">8.66</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">17.2</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">18</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">10</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.75</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="High-A" data-name="alex lodise">
           <div class="card-header" style="background:#4A7C59;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/822676/headshot/67/current" alt="Alex Lodise" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Alex Lodise</div>
+              <div class="card-name"><a href="https://www.milb.com/player/alex-lodise-822676" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Alex Lodise</a></div>
               <div class="card-meta">SS · Rome Emperors</div>
               <div class="card-org">⬆ Atlanta Braves</div>
             </div>
           </div>
           <div class="card-level" style="color:#4A7C59">High-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.252</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">9</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.692</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.294</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">25</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">103</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">26</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">11</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">2</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="High-A" data-name="marco dinges">
           <div class="card-header" style="background:#4A7C59;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701392/headshot/67/current" alt="Marco Dinges" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Marco Dinges</div>
+              <div class="card-name"><a href="https://www.milb.com/player/marco-dinges-701392" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Marco Dinges</a></div>
               <div class="card-meta">C · Carolina Mudcats</div>
               <div class="card-org">⬆ Milwaukee Brewers</div>
             </div>
           </div>
           <div class="card-level" style="color:#4A7C59">High-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.273</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">10</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">35</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.854</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.371</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">51</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">172</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">47</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">29</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="High-A" data-name="jaime ferrer">
           <div class="card-header" style="background:#4A7C59;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/695634/headshot/67/current" alt="Jaime Ferrer" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Jaime Ferrer</div>
+              <div class="card-name"><a href="https://www.milb.com/player/jaime-ferrer-695634" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jaime Ferrer</a></div>
               <div class="card-meta">OF · Cedar Rapids Kernels</div>
               <div class="card-org">⬆ Minnesota Twins</div>
             </div>
           </div>
           <div class="card-level" style="color:#4A7C59">High-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.216</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">5</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">36</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.635</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.296</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">101</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">319</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">69</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">34</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="High-A" data-name="carson dorsey">
           <div class="card-header" style="background:#4A7C59;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/805955/headshot/67/current" alt="Carson Dorsey" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Carson Dorsey</div>
+              <div class="card-name"><a href="https://www.milb.com/player/carson-dorsey-805955" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Carson Dorsey</a></div>
               <div class="card-meta">LHP · Aberdeen IronBirds</div>
               <div class="card-org">⬆ Baltimore Orioles</div>
             </div>
@@ -624,72 +632,72 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#4A7C59;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/694573/headshot/67/current" alt="Wyatt Crowell" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Wyatt Crowell</div>
+              <div class="card-name"><a href="https://www.milb.com/player/wyatt-crowell-694573" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Wyatt Crowell</a></div>
               <div class="card-meta">LHP · Great Lakes Loons</div>
               <div class="card-org">⬆ Los Angeles Dodgers</div>
             </div>
           </div>
           <div class="card-level" style="color:#4A7C59">High-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">3.23</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">78.0</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">3</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">6</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">93</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">57</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.32</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="Low-A" data-name="gavin adams">
           <div class="card-header" style="background:#2C5F8A;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701400/headshot/67/current" alt="Gavin Adams" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Gavin Adams</div>
+              <div class="card-name"><a href="https://www.milb.com/player/gavin-adams-701400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Gavin Adams</a></div>
               <div class="card-meta">1B/OF · Bradenton Marauders</div>
               <div class="card-org">⬆ Pittsburgh Pirates</div>
             </div>
           </div>
           <div class="card-level" style="color:#2C5F8A">Low-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="Low-A" data-name="yoel tejeda jr.">
           <div class="card-header" style="background:#2C5F8A;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701347/headshot/67/current" alt="Yoel Tejeda Jr." onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Yoel Tejeda Jr.</div>
+              <div class="card-name"><a href="https://www.milb.com/player/yoel-tejeda-jr-701347" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Yoel Tejeda Jr.</a></div>
               <div class="card-meta">OF · Fredericksburg Nationals</div>
               <div class="card-org">⬆ Washington Nationals</div>
             </div>
           </div>
           <div class="card-level" style="color:#2C5F8A">Low-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="Low-A" data-name="conner whittaker">
           <div class="card-header" style="background:#2C5F8A;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701422/headshot/67/current" alt="Conner Whittaker" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Conner Whittaker</div>
+              <div class="card-name"><a href="https://www.milb.com/player/conner-whittaker-701422" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Conner Whittaker</a></div>
               <div class="card-meta">LHP · Lake County Captains</div>
               <div class="card-org">⬆ Cleveland Guardians</div>
             </div>
           </div>
           <div class="card-level" style="color:#2C5F8A">Low-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">2.85</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">66.1</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">6</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">2</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">5</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">45</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">14</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">1.10</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="Low-A" data-name="bryce hubbart">
           <div class="card-header" style="background:#2C5F8A;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/687114/headshot/67/current" alt="Bryce Hubbart" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Bryce Hubbart</div>
+              <div class="card-name"><a href="https://www.milb.com/player/bryce-hubbart-687114" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Bryce Hubbart</a></div>
               <div class="card-meta">LHP · Daytona Tortugas</div>
               <div class="card-org">⬆ Cincinnati Reds</div>
             </div>
           </div>
           <div class="card-level" style="color:#2C5F8A">Low-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">WHIP</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">6.03</div><div class="stat-lbl">ERA</div></div><div class="stat"><div class="stat-val">34.1</div><div class="stat-lbl">IP</div></div><div class="stat"><div class="stat-val">2</div><div class="stat-lbl">W</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">L</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SV</div></div><div class="stat"><div class="stat-val">43</div><div class="stat-lbl">K</div></div><div class="stat"><div class="stat-val">23</div><div class="stat-lbl">BB</div></div><div class="stat"><div class="stat-val">2.01</div><div class="stat-lbl">WHIP</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="Low-A" data-name="carson montgomery">
           <div class="card-header" style="background:#2C5F8A;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/691000/headshot/67/current" alt="Carson Montgomery" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Carson Montgomery</div>
+              <div class="card-name"><a href="https://www.milb.com/player/carson-montgomery-691000" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Carson Montgomery</a></div>
               <div class="card-meta">RHP · Lake Elsinore Storm</div>
               <div class="card-org">⬆ San Diego Padres</div>
             </div>
@@ -702,20 +710,20 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#2C5F8A;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/694294/headshot/67/current" alt="Colton Vincent" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Colton Vincent</div>
+              <div class="card-name"><a href="https://www.milb.com/player/colton-vincent-694294" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Colton Vincent</a></div>
               <div class="card-meta">C/OF · Lake Elsinore Storm</div>
               <div class="card-org">⬆ San Diego Padres</div>
             </div>
           </div>
           <div class="card-level" style="color:#2C5F8A">Low-A</div>
-          <div class="card-stats"><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">—</div><div class="stat-lbl">SB</div></div></div>
+          <div class="card-stats"><div class="stat"><div class="stat-val">.179</div><div class="stat-lbl">AVG</div></div><div class="stat"><div class="stat-val">0</div><div class="stat-lbl">HR</div></div><div class="stat"><div class="stat-val">11</div><div class="stat-lbl">RBI</div></div><div class="stat"><div class="stat-val">.461</div><div class="stat-lbl">OPS</div></div><div class="stat"><div class="stat-val">.260</div><div class="stat-lbl">OBP</div></div><div class="stat"><div class="stat-val">50</div><div class="stat-lbl">G</div></div><div class="stat"><div class="stat-val">134</div><div class="stat-lbl">AB</div></div><div class="stat"><div class="stat-val">24</div><div class="stat-lbl">H</div></div><div class="stat"><div class="stat-val">13</div><div class="stat-lbl">R</div></div><div class="stat"><div class="stat-val">1</div><div class="stat-lbl">SB</div></div><div class="season-note">† 2025 stats (season not yet started)</div></div>
         </div>
 
         <div class="card" data-level="Rookie" data-name="max williams">
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/703637/headshot/67/current" alt="Max Williams" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Max Williams</div>
+              <div class="card-name"><a href="https://www.milb.com/player/max-williams-703637" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Max Williams</a></div>
               <div class="card-meta">OF · FCL/Jupiter</div>
               <div class="card-org">⬆ Miami Marlins</div>
             </div>
@@ -728,7 +736,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/702656/headshot/67/current" alt="Drew Faurot" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Drew Faurot</div>
+              <div class="card-name"><a href="https://www.milb.com/player/drew-faurot-702656" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Drew Faurot</a></div>
               <div class="card-meta">2B · FCL/Jupiter</div>
               <div class="card-org">⬆ Miami Marlins</div>
             </div>
@@ -741,7 +749,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/804123/headshot/67/current" alt="Joey Volini" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Joey Volini</div>
+              <div class="card-name"><a href="https://www.milb.com/player/joey-volini-804123" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Joey Volini</a></div>
               <div class="card-meta">LHP · FCL/Jupiter</div>
               <div class="card-org">⬆ Miami Marlins</div>
             </div>
@@ -754,7 +762,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/804942/headshot/67/current" alt="Cam Leiter" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Cam Leiter</div>
+              <div class="card-name"><a href="https://www.milb.com/player/cam-leiter-804942" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Cam Leiter</a></div>
               <div class="card-meta">RHP · ACL/AZL</div>
               <div class="card-org">⬆ Los Angeles Dodgers</div>
             </div>
@@ -767,7 +775,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/807290/headshot/67/current" alt="Peyton Prescott" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Peyton Prescott</div>
+              <div class="card-name"><a href="https://www.milb.com/player/peyton-prescott-807290" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Peyton Prescott</a></div>
               <div class="card-meta">RHP · ACL/AZL</div>
               <div class="card-org">⬆ New York Mets</div>
             </div>
@@ -780,7 +788,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/805971/headshot/67/current" alt="Evan Chrest" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Evan Chrest</div>
+              <div class="card-name"><a href="https://www.milb.com/player/evan-chrest-805971" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Evan Chrest</a></div>
               <div class="card-meta">RHP · ACL/AZL</div>
               <div class="card-org">⬆ Cleveland Guardians</div>
             </div>
@@ -793,7 +801,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/702629/headshot/67/current" alt="Gage Harrelson" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Gage Harrelson</div>
+              <div class="card-name"><a href="https://www.milb.com/player/gage-harrelson-702629" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Gage Harrelson</a></div>
               <div class="card-meta">OF · ACL Angels</div>
               <div class="card-org">⬆ Los Angeles Angels</div>
             </div>
@@ -806,7 +814,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/702486/headshot/67/current" alt="Jaxson West" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Jaxson West</div>
+              <div class="card-name"><a href="https://www.milb.com/player/jaxson-west-702486" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jaxson West</a></div>
               <div class="card-meta">C · ACL/AZL</div>
               <div class="card-org">⬆ Toronto Blue Jays</div>
             </div>
@@ -819,7 +827,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="card-header" style="background:#6B4C93;color:white">
             <img class="card-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/824506/headshot/67/current" alt="Maison Martinez" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">Maison Martinez</div>
+              <div class="card-name"><a href="https://www.milb.com/player/maison-martinez-824506" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Maison Martinez</a></div>
               <div class="card-meta">RHP · ACL/AZL</div>
               <div class="card-org">⬆ Cincinnati Reds</div>
             </div>
@@ -950,9 +958,9 @@ footer a { color: var(--gold); text-decoration: none; }
           <td><span class="lvl-badge" style="background:#782F40;color:white">MLB</span></td>
           <td class="td-team">Houston Astros</td>
           <td class="td-org">—</td>
-          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .077</td>
+          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .067</td>
           <td class="td-stat"><span class="stat-lbl-sm">HR</span> 0</td>
-          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> .371</td>
+          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> .330</td>
         </tr>
 
         <tr data-level="MLB" data-name="taylor walls">
@@ -971,85 +979,85 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="AAA" data-name="shane drohan">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/675660/headshot/67/current" alt="Shane Drohan" onerror="this.style.display='none'">
-            <span class="name-text">Shane Drohan <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/shane-drohan-675660" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Shane Drohan</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#B5451B;color:white">AAA</span></td>
           <td class="td-team">Nashville Sounds</td>
           <td class="td-org">Milwaukee Brewers</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 2.27</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 47.2</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.01</td>
         </tr>
 
         <tr data-level="AAA" data-name="james tibbs iii">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/696486/headshot/67/current" alt="James Tibbs III" onerror="this.style.display='none'">
-            <span class="name-text">James Tibbs III <span class="pos-tag">OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/james-tibbs-iii-696486" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">James Tibbs III</a> <span class="pos-tag">OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#B5451B;color:white">AAA</span></td>
           <td class="td-team">Oklahoma City Baseball Club</td>
           <td class="td-org">Los Angeles Dodgers</td>
-          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">HR</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .615</td>
+          <td class="td-stat"><span class="stat-lbl-sm">HR</span> 2</td>
+          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> 2.105</td>
         </tr>
 
         <tr data-level="AAA" data-name="cj van eyk">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/669310/headshot/67/current" alt="CJ Van Eyk" onerror="this.style.display='none'">
-            <span class="name-text">CJ Van Eyk <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/cj-van-eyk-669310" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">CJ Van Eyk</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#B5451B;color:white">AAA</span></td>
           <td class="td-team">Buffalo Bisons</td>
           <td class="td-org">Toronto Blue Jays</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 4.94</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 89.1</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.52</td>
         </tr>
 
         <tr data-level="AAA" data-name="brandon leibrandt">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/605335/headshot/67/current" alt="Brandon Leibrandt" onerror="this.style.display='none'">
-            <span class="name-text">Brandon Leibrandt <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/brandon-leibrandt-605335" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Brandon Leibrandt</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#B5451B;color:white">AAA</span></td>
           <td class="td-team">Louisville Bats</td>
           <td class="td-org">Cincinnati Reds</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 2.85</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 41.0</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.12</td>
         </tr>
 
         <tr data-level="AAA" data-name="drew parrish">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/669283/headshot/67/current" alt="Drew Parrish" onerror="this.style.display='none'">
-            <span class="name-text">Drew Parrish <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/drew-parrish-669283" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Drew Parrish</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#B5451B;color:white">AAA</span></td>
           <td class="td-team">Louisville Bats</td>
           <td class="td-org">Cincinnati Reds</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 6.58</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 26.0</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.88</td>
         </tr>
 
         <tr data-level="AAA" data-name="dj stewart">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/621466/headshot/67/current" alt="DJ Stewart" onerror="this.style.display='none'">
-            <span class="name-text">DJ Stewart <span class="pos-tag">OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/dj-stewart-621466" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">DJ Stewart</a> <span class="pos-tag">OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#B5451B;color:white">AAA</span></td>
           <td class="td-team">—</td>
           <td class="td-org">Free Agent</td>
-          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">HR</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .125</td>
+          <td class="td-stat"><span class="stat-lbl-sm">HR</span> 5</td>
+          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> .502</td>
         </tr>
 
         <tr data-level="AA" data-name="jamie arnold">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701364/headshot/67/current" alt="Jamie Arnold" onerror="this.style.display='none'">
-            <span class="name-text">Jamie Arnold <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/jamie-arnold-701364" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jamie Arnold</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#CEB888;color:#333">AA</span></td>
           <td class="td-team">Midland RockHounds</td>
@@ -1062,85 +1070,85 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="AA" data-name="jackson baumeister">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/691765/headshot/67/current" alt="Jackson Baumeister" onerror="this.style.display='none'">
-            <span class="name-text">Jackson Baumeister <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/jackson-baumeister-691765" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jackson Baumeister</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#CEB888;color:#333">AA</span></td>
           <td class="td-team">Montgomery Biscuits</td>
           <td class="td-org">Tampa Bay Rays</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 4.62</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 62.1</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.25</td>
         </tr>
 
         <tr data-level="AA" data-name="jack anderson">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/681252/headshot/67/current" alt="Jack Anderson" onerror="this.style.display='none'">
-            <span class="name-text">Jack Anderson <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/jack-anderson-681252" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jack Anderson</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#CEB888;color:#333">AA</span></td>
           <td class="td-team">Portland Sea Dogs</td>
           <td class="td-org">Boston Red Sox</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 3.58</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 75.1</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.17</td>
         </tr>
 
         <tr data-level="AA" data-name="j.c. flowers">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/669001/headshot/67/current" alt="J.C. Flowers" onerror="this.style.display='none'">
-            <span class="name-text">J.C. Flowers <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/j-c-flowers-669001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">J.C. Flowers</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#CEB888;color:#333">AA</span></td>
           <td class="td-team">Altoona Curve</td>
           <td class="td-org">Pittsburgh Pirates</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 8.66</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 17.2</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.75</td>
         </tr>
 
         <tr data-level="High-A" data-name="alex lodise">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/822676/headshot/67/current" alt="Alex Lodise" onerror="this.style.display='none'">
-            <span class="name-text">Alex Lodise <span class="pos-tag">SS</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/alex-lodise-822676" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Alex Lodise</a> <span class="pos-tag">SS</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#4A7C59;color:white">High-A</span></td>
           <td class="td-team">Rome Emperors</td>
           <td class="td-org">Atlanta Braves</td>
-          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">HR</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .252</td>
+          <td class="td-stat"><span class="stat-lbl-sm">HR</span> 1</td>
+          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> .692</td>
         </tr>
 
         <tr data-level="High-A" data-name="marco dinges">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701392/headshot/67/current" alt="Marco Dinges" onerror="this.style.display='none'">
-            <span class="name-text">Marco Dinges <span class="pos-tag">C</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/marco-dinges-701392" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Marco Dinges</a> <span class="pos-tag">C</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#4A7C59;color:white">High-A</span></td>
           <td class="td-team">Carolina Mudcats</td>
           <td class="td-org">Milwaukee Brewers</td>
-          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">HR</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .273</td>
+          <td class="td-stat"><span class="stat-lbl-sm">HR</span> 10</td>
+          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> .854</td>
         </tr>
 
         <tr data-level="High-A" data-name="jaime ferrer">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/695634/headshot/67/current" alt="Jaime Ferrer" onerror="this.style.display='none'">
-            <span class="name-text">Jaime Ferrer <span class="pos-tag">OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/jaime-ferrer-695634" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jaime Ferrer</a> <span class="pos-tag">OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#4A7C59;color:white">High-A</span></td>
           <td class="td-team">Cedar Rapids Kernels</td>
           <td class="td-org">Minnesota Twins</td>
-          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">HR</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .216</td>
+          <td class="td-stat"><span class="stat-lbl-sm">HR</span> 5</td>
+          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> .635</td>
         </tr>
 
         <tr data-level="High-A" data-name="carson dorsey">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/805955/headshot/67/current" alt="Carson Dorsey" onerror="this.style.display='none'">
-            <span class="name-text">Carson Dorsey <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/carson-dorsey-805955" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Carson Dorsey</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#4A7C59;color:white">High-A</span></td>
           <td class="td-team">Aberdeen IronBirds</td>
@@ -1153,20 +1161,20 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="High-A" data-name="wyatt crowell">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/694573/headshot/67/current" alt="Wyatt Crowell" onerror="this.style.display='none'">
-            <span class="name-text">Wyatt Crowell <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/wyatt-crowell-694573" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Wyatt Crowell</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#4A7C59;color:white">High-A</span></td>
           <td class="td-team">Great Lakes Loons</td>
           <td class="td-org">Los Angeles Dodgers</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 3.23</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 78.0</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.32</td>
         </tr>
 
         <tr data-level="Low-A" data-name="gavin adams">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701400/headshot/67/current" alt="Gavin Adams" onerror="this.style.display='none'">
-            <span class="name-text">Gavin Adams <span class="pos-tag">1B/OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/gavin-adams-701400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Gavin Adams</a> <span class="pos-tag">1B/OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#2C5F8A;color:white">Low-A</span></td>
           <td class="td-team">Bradenton Marauders</td>
@@ -1179,7 +1187,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Low-A" data-name="yoel tejeda jr.">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701347/headshot/67/current" alt="Yoel Tejeda Jr." onerror="this.style.display='none'">
-            <span class="name-text">Yoel Tejeda Jr. <span class="pos-tag">OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/yoel-tejeda-jr-701347" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Yoel Tejeda Jr.</a> <span class="pos-tag">OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#2C5F8A;color:white">Low-A</span></td>
           <td class="td-team">Fredericksburg Nationals</td>
@@ -1192,33 +1200,33 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Low-A" data-name="conner whittaker">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/701422/headshot/67/current" alt="Conner Whittaker" onerror="this.style.display='none'">
-            <span class="name-text">Conner Whittaker <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/conner-whittaker-701422" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Conner Whittaker</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#2C5F8A;color:white">Low-A</span></td>
           <td class="td-team">Lake County Captains</td>
           <td class="td-org">Cleveland Guardians</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 2.85</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 66.1</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 1.10</td>
         </tr>
 
         <tr data-level="Low-A" data-name="bryce hubbart">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/687114/headshot/67/current" alt="Bryce Hubbart" onerror="this.style.display='none'">
-            <span class="name-text">Bryce Hubbart <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/bryce-hubbart-687114" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Bryce Hubbart</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#2C5F8A;color:white">Low-A</span></td>
           <td class="td-team">Daytona Tortugas</td>
           <td class="td-org">Cincinnati Reds</td>
-          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">IP</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">ERA</span> 6.03</td>
+          <td class="td-stat"><span class="stat-lbl-sm">IP</span> 34.1</td>
+          <td class="td-stat"><span class="stat-lbl-sm">WHIP</span> 2.01</td>
         </tr>
 
         <tr data-level="Low-A" data-name="carson montgomery">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/691000/headshot/67/current" alt="Carson Montgomery" onerror="this.style.display='none'">
-            <span class="name-text">Carson Montgomery <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/carson-montgomery-691000" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Carson Montgomery</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#2C5F8A;color:white">Low-A</span></td>
           <td class="td-team">Lake Elsinore Storm</td>
@@ -1231,20 +1239,20 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Low-A" data-name="colton vincent">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/694294/headshot/67/current" alt="Colton Vincent" onerror="this.style.display='none'">
-            <span class="name-text">Colton Vincent <span class="pos-tag">C/OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/colton-vincent-694294" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Colton Vincent</a> <span class="pos-tag">C/OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#2C5F8A;color:white">Low-A</span></td>
           <td class="td-team">Lake Elsinore Storm</td>
           <td class="td-org">San Diego Padres</td>
-          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">HR</span> —</td>
-          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> —</td>
+          <td class="td-stat"><span class="stat-lbl-sm">AVG</span> .179</td>
+          <td class="td-stat"><span class="stat-lbl-sm">HR</span> 0</td>
+          <td class="td-stat"><span class="stat-lbl-sm">OPS</span> .461</td>
         </tr>
 
         <tr data-level="Rookie" data-name="max williams">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/703637/headshot/67/current" alt="Max Williams" onerror="this.style.display='none'">
-            <span class="name-text">Max Williams <span class="pos-tag">OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/max-williams-703637" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Max Williams</a> <span class="pos-tag">OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">FCL/Jupiter</td>
@@ -1257,7 +1265,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="drew faurot">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/702656/headshot/67/current" alt="Drew Faurot" onerror="this.style.display='none'">
-            <span class="name-text">Drew Faurot <span class="pos-tag">2B</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/drew-faurot-702656" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Drew Faurot</a> <span class="pos-tag">2B</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">FCL/Jupiter</td>
@@ -1270,7 +1278,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="joey volini">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/804123/headshot/67/current" alt="Joey Volini" onerror="this.style.display='none'">
-            <span class="name-text">Joey Volini <span class="pos-tag">LHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/joey-volini-804123" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Joey Volini</a> <span class="pos-tag">LHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">FCL/Jupiter</td>
@@ -1283,7 +1291,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="cam leiter">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/804942/headshot/67/current" alt="Cam Leiter" onerror="this.style.display='none'">
-            <span class="name-text">Cam Leiter <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/cam-leiter-804942" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Cam Leiter</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">ACL/AZL</td>
@@ -1296,7 +1304,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="peyton prescott">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/807290/headshot/67/current" alt="Peyton Prescott" onerror="this.style.display='none'">
-            <span class="name-text">Peyton Prescott <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/peyton-prescott-807290" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Peyton Prescott</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">ACL/AZL</td>
@@ -1309,7 +1317,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="evan chrest">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/805971/headshot/67/current" alt="Evan Chrest" onerror="this.style.display='none'">
-            <span class="name-text">Evan Chrest <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/evan-chrest-805971" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Evan Chrest</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">ACL/AZL</td>
@@ -1322,7 +1330,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="gage harrelson">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/702629/headshot/67/current" alt="Gage Harrelson" onerror="this.style.display='none'">
-            <span class="name-text">Gage Harrelson <span class="pos-tag">OF</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/gage-harrelson-702629" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Gage Harrelson</a> <span class="pos-tag">OF</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">ACL Angels</td>
@@ -1335,7 +1343,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="jaxson west">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/702486/headshot/67/current" alt="Jaxson West" onerror="this.style.display='none'">
-            <span class="name-text">Jaxson West <span class="pos-tag">C</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/jaxson-west-702486" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Jaxson West</a> <span class="pos-tag">C</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">ACL/AZL</td>
@@ -1348,7 +1356,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <tr data-level="Rookie" data-name="maison martinez">
           <td class="td-name">
             <img class="row-photo" src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_120,q_auto:best/v1/people/824506/headshot/67/current" alt="Maison Martinez" onerror="this.style.display='none'">
-            <span class="name-text">Maison Martinez <span class="pos-tag">RHP</span></span>
+            <span class="name-text"><a href="https://www.milb.com/player/maison-martinez-824506" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Maison Martinez</a> <span class="pos-tag">RHP</span></span>
           </td>
           <td><span class="lvl-badge" style="background:#6B4C93;color:white">Rookie</span></td>
           <td class="td-team">ACL/AZL</td>
