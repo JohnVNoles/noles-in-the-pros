@@ -108,11 +108,12 @@ def read_roster() -> list[dict]:
     players = []
     for row in ws.iter_rows(min_row=2, max_row=ws.max_row, values_only=True):
         name, pos, org, level, team = row[0], row[1], row[2], row[3], row[4]
+        milb_url = row[10] if len(row) > 10 else None
         if name:
             players.append({
                 "name": name, "position": pos or "",
                 "org": org or "", "level": level or "",
-                "team": team or ""
+                "team": team or "", "milb_url": milb_url or ""
             })
     return players
 
@@ -306,7 +307,7 @@ def generate_html(player_data: list[dict]):
           <div class="card-header" style="background:{color};color:{txt}">
             <img class="card-photo" src="{photo_url(p)}" alt="{p["name"]}" onerror="this.style.display='none'">
             <div class="card-info">
-              <div class="card-name">{p["name"]}</div>
+              <div class="card-name">{f'<a href="{p["milb_url"]}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">{p["name"]}</a>' if p.get("milb_url") else p["name"]}</div>
               <div class="card-meta">{p["position"]} · {p["team"]}</div>
               {org_line}
             </div>
@@ -337,7 +338,7 @@ def generate_html(player_data: list[dict]):
         <tr data-level="{lvl}" data-name="{p["name"].lower()}">
           <td class="td-name">
             <img class="row-photo" src="{photo_url(p)}" alt="{p["name"]}" onerror="this.style.display='none'">
-            <span class="name-text">{p["name"]} <span class="pos-tag">{p["position"]}</span></span>
+            <span class="name-text">{f'<a href="{p["milb_url"]}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">{p["name"]}</a>' if p.get("milb_url") else p["name"]} <span class="pos-tag">{p["position"]}</span></span>
           </td>
           <td><span class="lvl-badge" style="background:{color};color:{txt}">{lvl}</span></td>
           <td class="td-team">{p["team"]}</td>
@@ -891,7 +892,18 @@ def main():
     print("→ Looking up player IDs and fetching stats...\n")
     for p in roster:
         name = p["name"]
-        pid  = find_player_id(name, cache)
+        milb_url = p.get("milb_url", "")
+
+        # Extract player ID directly from MiLB URL if available (more reliable than name search)
+        if milb_url and milb_url.startswith("http"):
+            try:
+                pid = int(milb_url.rstrip("/").split("-")[-1])
+                cache[name] = pid
+                print(f"  \u2713 {name} \u2192 ID {pid} (from URL)")
+            except (ValueError, IndexError):
+                pid = find_player_id(name, cache)
+        else:
+            pid = find_player_id(name, cache)
 
         p["mlb_id"] = pid
         if pid:
